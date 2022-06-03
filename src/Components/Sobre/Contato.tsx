@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useState, ChangeEvent, FormEvent } from "react";
-import {userValidation} from "../Validations/Validation"
 const Div = styled.div`
     form{
         display: flex;
@@ -51,7 +50,6 @@ const Div = styled.div`
         }
     }
 `
-userValidation
 export function Contato(){
     /* const valdiateMessage = (event: FormEvent<HTMLFormElement>) =>{
         event.preventDefault()
@@ -64,7 +62,7 @@ export function Contato(){
     } */
     return(
         <Div>
-            <form onSubmit={()=>valdiateMessage}>
+            <form>
                 <input type="text" name="userName" id="" placeholder="Seu nome" />
                 <input type="email" name="userMail" id="" placeholder="Email" />
                 <textarea name="userMessage" id="" placeholder="Digite sua menssagem" ></textarea>
