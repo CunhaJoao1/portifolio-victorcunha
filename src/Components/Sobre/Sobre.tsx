@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import imageEu from "/src/assets/eu01.jpg"
 import imageEu2 from "/src/assets/eu02.jpg"
 
+import {IoIosArrowForward} from "react-icons/io"
+import { Link } from "react-router-dom";
+
 const Div = styled.div`
     width: 100%;
     min-height: 93vh;
@@ -54,7 +57,7 @@ const Div = styled.div`
             grid-template-areas: 
             ". title ."
             ". content ."
-            ". contato .";
+            ". button .";
             grid-template-columns: auto min(90%, 50rem) auto;
             .title-apres{
                 grid-area: title;
@@ -68,8 +71,24 @@ const Div = styled.div`
                 font-size: clamp( 20px,50%,30px) ;
             }
             .contato{
-                grid-area: contato;
-                margin-top: 5rem;
+                grid-area: button;
+                margin-top: 2rem;
+                text-align: left;
+                button{
+                    padding: 0.8rem 1.5rem;
+                    background-color: #0078D7;
+                    color: aliceblue;
+                    font-family: 'Work Sans';
+                    font-weight: 600;
+                    font-size: clamp( 50%,16px,15px) ;
+                    border: none;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    transition:background .2s ease ;
+                    &:hover{
+                        background-color: #1683dc;
+                    }
+                }
             }
         }       
         
@@ -93,9 +112,12 @@ export function Sobre(){
                     <h4 className="title-apres">E quem sou eu?</h4>
                     <p className="content-apres">Acima de tudo, um apaixonado por tecnología. Nascido e criado no Piuaí, comecei a faculdade de sistemas de infomação em 2019. Comecei a trabalhar com tecnología no Rio de Janeiro como Programador RPA, mas a minha grande paixão é o desenvolvimento Frontend em especial com React 💙</p>
                     
-                    {/* <div className="contato">
-                        <Contato/>
-                    </div> */}
+                   <div className="contato">
+               <Link to={"/projetos"}>    <button>
+                       Projetos <IoIosArrowForward/>
+                   </button> </Link>
+
+                   </div>
                 </div>
             </motion.div>
         </Div>
