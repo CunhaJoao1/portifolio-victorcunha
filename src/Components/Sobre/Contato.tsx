@@ -51,15 +51,6 @@ const Div = styled.div`
     }
 `
 export function Contato(){
-    /* const valdiateMessage = (event: FormEvent<HTMLFormElement>) =>{
-        event.preventDefault()
-        let formData = {
-            name: event.target[0],
-            email: event.target,
-            message: event.target
-        }
-        console.log(formData)
-    } */
     return(
         <Div>
             <form>
