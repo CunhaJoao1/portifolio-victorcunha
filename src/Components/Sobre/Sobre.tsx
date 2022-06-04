@@ -94,9 +94,9 @@ export function Sobre(){
                     <h4 className="title-apres">E quem sou eu?</h4>
                     <p className="content-apres">Acima de tudo, um apaixonado por tecnología. Nascido e criado no Piuaí, comecei a faculdade de sistemas de infomação em 2019. Comecei a trabalhar com tecnología no Rio de Janeiro como Programador RPA, mas a minha grande paixão é o desenvolvimento Frontend em especial com React 💙</p>
                     
-                    <div className="contato">
+                    {/* <div className="contato">
                         <Contato/>
-                    </div>
+                    </div> */}
                 </div>
             </motion.div>
         </Div>
