@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 import imageEu from "/src/assets/eu01.jpg"
 import imageEu2 from "/src/assets/eu02.jpg"
-import { Contato } from "./Contato";
 
 const Div = styled.div`
     width: 100%;
