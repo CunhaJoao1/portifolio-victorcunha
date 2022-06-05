@@ -97,7 +97,7 @@ export function Card(){
                 <h5>REAL TIME CHAT APP</h5>
                 <p className="description">Um web app que utiliza <span>React, NodeJS e Socket.io como WebSockets</span> para usar como um aplicativo de mensagens instantâneas</p>
                 <p className="type">Web App</p>
-                <button type="button">Ver projeto <p><IoIosArrowForward size={'1.5em'}/></p> </button>
+                <button type="button" onClick={()=>window.open("https://github.com/CunhaJoao1/RealTimeChat", "_blank")}>Ver projeto <p><IoIosArrowForward size={'1.5em'}/></p> </button>
             </div>
         </Div>
     )

@@ -32,10 +32,7 @@ export function Projetos(){
                 <h3>Alguns dos meus <span>Projetos</span> </h3>
             </div>
             <div className="cards">
-                <Card/> 
-                <Card/> 
-                <Card/> 
-                
+                <Card/>                 
             </div>
         </Div>
     )
