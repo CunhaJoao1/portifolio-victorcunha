@@ -122,4 +122,4 @@ export function Sobre(){
             </motion.div>
         </Div>
     )
-}
+}   

@@ -1,5 +1,31 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+
+import { useState, useEffect } from 'react';
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+export default function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 const Div = styled.div`
     width: 100%;
     height: 7vh;
@@ -27,16 +53,22 @@ const Div = styled.div`
     
 `
 export function Header(){
+    const { height, width } = useWindowDimensions();
     return(
         <Div>
-            <h2 className="logo">Victor Cunha</h2>
-            <nav>
-                <ul>
-                    <li>HOME</li>
-                    <li>SOBRE</li>
-                    <li>TRABALHOS</li>
-                </ul>
-            </nav>
+            <>
+                
+                <h2 className="logo">Victor Cunha</h2>
+                {width > 768? <nav>
+                    <ul>
+                        <li>HOME</li>
+                        <li>SOBRE</li>
+                        <li>TRABALHOS</li>
+                    </ul>
+                </nav>
+                :''}
+                 
+            </>
         </Div>
     )    
 }
