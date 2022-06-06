@@ -1,20 +1,22 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-
+import {motion} from "framer-motion"
 
 
 const Div = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background-color: #111;
-    position: absolute;
+    
+    .menu{
+        width: 100vw;
+        height: 70vh;
+        background-color: #2a2b2e;
+        position: absolute;
 
-    z-index: 10;
+        z-index: 10;
 
-    top: 0;
-    left: 0;
-    nav{
-        height: 100vh;
+        top: 0;
+        left: 0;
+        nav{
+        height: 70vh;
         ul{
             height: 100%;
             flex-direction: column;
@@ -25,21 +27,31 @@ const Div = styled.div`
             }
         }
     }
+    }
+   
 
 `
 type MobilePrps = {
-    content: ReactNode
+    content: ReactNode,
+    openMenu: boolean
 }
 export function MobileMenu(props: MobilePrps){
     return(
         <Div>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Sobre</li>
-                    <li>Proejetos</li>
-                </ul>
-            </nav>
+            <motion.div className="menu"
+            initial={{ height: 0}}
+            animate={{ height: '70vh'}}
+            exit={{ height: 0}}>
+                <motion.nav
+                >
+                    <ul>
+                        <li>Home</li>
+                        <li>Sobre</li>
+                        <li>Proejetos</li>
+                    </ul>
+                </motion.nav>
+            </motion.div>
+            
         </Div>
     )
 }
