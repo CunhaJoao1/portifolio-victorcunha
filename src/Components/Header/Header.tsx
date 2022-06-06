@@ -84,15 +84,9 @@ export function Header(){
                 {width > 768? <Navigation/>:  
                 <> 
                   <div className="toggle" onClick={()=>console.log(isOpen)}>
-                    <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={isOpen  =>{
-                      if(isOpen){
-                        return <MobileMenu content/>
-                      }
-                      else{
-                        return 'dasd'
-                      }
-                    }}/>
+                    <Hamburger toggled={isOpen} toggle={setIsOpen}/>
                   </div> 
+                  {isOpen? <MobileMenu content/>: ''}
                 </>}                 
             </>
         </Div>
