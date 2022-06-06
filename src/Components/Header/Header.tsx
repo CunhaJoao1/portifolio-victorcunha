@@ -86,7 +86,7 @@ export function Header(){
                   <div className="toggle" onClick={()=>console.log(isOpen)}>
                     <Hamburger toggled={isOpen} toggle={setIsOpen}/>
                   </div> 
-                  {isOpen? <MobileMenu openMenu={isOpen} content/>: ''}
+                  {isOpen? <MobileMenu sections={["Home", "Sobre", "Projetos"]} openMenu={isOpen} content/>: ''}
                 </>}                 
             </>
         </Div>

@@ -33,7 +33,8 @@ const Div = styled.div`
 `
 type MobilePrps = {
     content: ReactNode,
-    openMenu: boolean
+    openMenu: boolean,
+    sections: string[]
 }
 export function MobileMenu(props: MobilePrps){
     return(
@@ -45,9 +46,9 @@ export function MobileMenu(props: MobilePrps){
                 <motion.nav
                 >
                     <ul>
-                        <li>Home</li>
-                        <li>Sobre</li>
-                        <li>Proejetos</li>
+                        {props.sections.map((section) =>{
+                            return <li>{section}</li>
+                        })}
                     </ul>
                 </motion.nav>
             </motion.div>
