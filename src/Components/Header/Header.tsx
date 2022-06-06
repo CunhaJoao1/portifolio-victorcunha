@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 
 import { useState, useEffect } from 'react';
 
+import { Squash as Hamburger } from 'hamburger-react'
+import { MobileMenu } from "./MobileMenu";
+
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -35,6 +38,8 @@ const Div = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
+
+    position: relative;
     ul{
         display: flex;
         gap: 2rem;
@@ -50,24 +55,45 @@ const Div = styled.div`
              }
         }
     }
+    .toggle{
+      position: absolute;
+      z-index: 150;
+      right: 5%;
+    }
     
 `
 export function Header(){
     const { height, width } = useWindowDimensions();
+    const [isOpen, setIsOpen] = useState(false)
+
+    function Navigation(){
+      return(
+            <nav>
+              <ul>
+                <li>HOME</li>
+                <li>SOBRE</li>
+                <li>TRABALHOS</li>
+              </ul>
+            </nav>
+      )
+    }
     return(
         <Div>
-            <>
-                
+            <>                
                 <h2 className="logo">Victor Cunha</h2>
-                {width > 768? <nav>
-                    <ul>
-                        <li>HOME</li>
-                        <li>SOBRE</li>
-                        <li>TRABALHOS</li>
-                    </ul>
-                </nav>
-                :''}
-                 
+                {width > 768? <Navigation/>:  
+                <> 
+                  <div className="toggle" onClick={()=>console.log(isOpen)}>
+                    <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={isOpen  =>{
+                      if(isOpen){
+                        return <MobileMenu content/>
+                      }
+                      else{
+                        return 'dasd'
+                      }
+                    }}/>
+                  </div> 
+                </>}                 
             </>
         </Div>
     )    
