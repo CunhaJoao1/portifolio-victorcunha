@@ -14,10 +14,6 @@ const Div = styled.div`
     
     background-color: #010208;
     padding: 5rem 0;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-
     .content{
         color: aliceblue;
         text-align: center;       

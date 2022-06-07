@@ -6,11 +6,11 @@ import { Card } from "./Cards";
 
 const Div = styled.div`
     width: 100%;
-    min-height: 93vh;
+    min-height: 100vh;
     height: 100%;
     background-color: #010208;
     color: aliceblue;
-    padding: 2rem 5%;
+    padding: 5rem 5%;
     .title{
         h3{
             font-family: 'Work Sans';
