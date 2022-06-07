@@ -7,16 +7,16 @@ const Div = styled.div`
     
     .menu{
         width: 100vw;
-        height: 70vh;
+        height: 100%;
         background-color: #2a2b2e;
-        position: absolute;
+        position: fixed;
 
         z-index: 10;
 
         top: 0;
         left: 0;
         nav{
-        height: 70vh;
+        height: 100%;
         ul{
             height: 100%;
             flex-direction: column;
@@ -41,7 +41,8 @@ export function MobileMenu(props: MobilePrps){
         <Div>
             <motion.div className="menu"
             initial={{ height: 0}}
-            animate={{ height: '70vh'}}
+            animate={{ height: '100vh'}}
+            transition={{duration: 0.2, stiffness: 100}}
             exit={{ height: 0}}>
                 <motion.nav
                 >

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Div = styled.div`
     width: 100vw;
-    height: 93vh;
+    height: 100vh;
     background-color: #010208;
     display: flex;
     align-items: center;

@@ -39,7 +39,8 @@ const Div = styled.div`
     justify-content: space-between;
     padding: 0 5%;
 
-    position: relative;
+    position: fixed;
+    z-index: 1000;
     ul{
         display: flex;
         gap: 2rem;
