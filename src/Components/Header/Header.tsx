@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 
 import { useState, useEffect } from 'react';
 
@@ -63,19 +63,27 @@ const Div = styled.div`
     }
     
 `
-export function Header(){
+const Nav = styled.nav`
+  ul{
+    li{
+      color: aliceblue;
+    }
+  }
+`
+const LinkStyle = `list-style: none; color: inherit;`
+export function HeaderNavigation(){
     const { height, width } = useWindowDimensions();
     const [isOpen, setIsOpen] = useState(false)
 
     function Navigation(){
       return(
-            <nav>
+            <Nav>
               <ul>
-                <li>HOME</li>
-                <li>SOBRE</li>
-                <li>TRABALHOS</li>
+              <Link to={"/"}><li> HOME </li></Link>  
+                <Link to={"/sobre"}><li>SOBRE</li></Link>  
+                <Link to={"/projetos"}> <li>PROJETOS</li></Link>             
               </ul>
-            </nav>
+            </Nav>
       )
     }
     return(
@@ -84,7 +92,7 @@ export function Header(){
                 <h2 className="logo">Victor Cunha</h2>
                 {width > 768? <Navigation/>:  
                 <> 
-                  <div className="toggle" onClick={()=>console.log(isOpen)}>
+                  <div className="toggle">
                     <Hamburger toggled={isOpen} toggle={setIsOpen}/>
                   </div> 
                   {isOpen? <MobileMenu sections={["Home", "Sobre", "Projetos"]} openMenu={isOpen} content/>: ''}

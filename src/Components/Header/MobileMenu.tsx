@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion"
+import { Link } from "react-router-dom";
 
 
 const Div = styled.div`
@@ -24,6 +25,7 @@ const Div = styled.div`
             justify-content: center;
             li{
                 font-size:38px;
+                color: aliceblue;
             }
         }
     }
@@ -31,6 +33,7 @@ const Div = styled.div`
    
 
 `
+
 type MobilePrps = {
     content: ReactNode,
     openMenu: boolean,
@@ -47,8 +50,8 @@ export function MobileMenu(props: MobilePrps){
                 <motion.nav
                 >
                     <ul>
-                        {props.sections.map((section) =>{
-                            return <li>{section}</li>
+                        {props.sections.map((section, key: number) =>{
+                            return <Link to={`/${section}`}> <li key={key}>{section}</li> </Link>
                         })}
                     </ul>
                 </motion.nav>

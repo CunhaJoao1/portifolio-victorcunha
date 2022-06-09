@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {GrReactjs} from "react-icons/gr"
 import {motion} from "framer-motion"
 import {MdKeyboardArrowDown} from "react-icons/md"
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
+import { HeaderNavigation } from "../Header/Header";
 
 const Div = styled.div`
     width: 100vw;
@@ -68,6 +69,7 @@ export function Home(){
         hidden: { opacity: 0, scale: 0.9},
         visible: { opacity: 1, scale: 1},
       } 
+      window.onscroll = function(){changePageScroll()}
     return(
         <Div>
             <motion.h1 className="title" 
@@ -88,4 +90,8 @@ export function Home(){
          <Link to="/sobre" className="arrow"><div className="arrow"><MdKeyboardArrowDown color="white" size={'2em'}/></div> </Link>
         </Div>
     )
+}
+
+function changePageScroll() {
+    console.log("Ola mundo")
 }
