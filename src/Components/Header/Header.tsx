@@ -95,7 +95,7 @@ export function HeaderNavigation(){
                   <div className="toggle">
                     <Hamburger toggled={isOpen} toggle={setIsOpen}/>
                   </div> 
-                  {isOpen? <MobileMenu sections={["Home", "Sobre", "Projetos"]} openMenu={isOpen} content/>: ''}
+                  {isOpen? <MobileMenu setOpen={(data: boolean)=>setIsOpen(data)} sections={["Home", "Sobre", "Projetos"]} openMenu={isOpen} content/>: ''}
                 </>}                 
             </>
         </Div>

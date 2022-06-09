@@ -17,7 +17,7 @@ const Div = styled.div`
             font-size: clamp(35px, 50%, 40px);
             font-weight: 400;
             color: #7D7D81;
-            margin-bottom: 6rem;
+            margin-bottom: 3rem;
             span{
                 font-weight: 600;
                 color: aliceblue;

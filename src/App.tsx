@@ -14,6 +14,7 @@ function App() {
             <HeaderNavigation/> 
             <Routes>
               <Route path='/' element={<Home/>}/> 
+              <Route path='/home' element={<Home/>}/> 
               <Route path='/sobre' element={<Sobre/>}/> 
               <Route path='/projetos' element={<Projetos/>}/>
             </Routes>

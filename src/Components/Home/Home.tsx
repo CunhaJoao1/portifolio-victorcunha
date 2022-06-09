@@ -84,7 +84,7 @@ export function Home(){
              animate={{ opacity: 1, y:0}}
              transition={{duration: 1}}
              >
-                <button type="button">Download CV</button>
+                <button type="button" onClick={()=>window.open("https://drive.google.com/file/d/14ktorYj-npsg73P1Nh4BsnHoPAnk7nQk/view?usp=sharing", "_blank")}>Download CV</button>
                 <button type="button">Entrar em contato</button>
             </motion.div>
          <Link to="/sobre" className="arrow"><div className="arrow"><MdKeyboardArrowDown color="white" size={'2em'}/></div> </Link>

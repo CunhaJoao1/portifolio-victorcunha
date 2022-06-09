@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion"
 import { Link } from "react-router-dom";
@@ -37,9 +37,15 @@ const Div = styled.div`
 type MobilePrps = {
     content: ReactNode,
     openMenu: boolean,
-    sections: string[]
+    sections: string[],
+    setOpen: Function,
+
 }
 export function MobileMenu(props: MobilePrps){
+    const isOpen = false;
+    function CloseMenu(){
+        props.setOpen(isOpen);
+    }
     return(
         <Div>
             <motion.div className="menu"
@@ -51,7 +57,7 @@ export function MobileMenu(props: MobilePrps){
                 >
                     <ul>
                         {props.sections.map((section, key: number) =>{
-                            return <Link to={`/${section}`}> <li key={key}>{section}</li> </Link>
+                            return <Link to={`/${section}`}> <li key={key} onClick={CloseMenu}>{section}</li> </Link>
                         })}
                     </ul>
                 </motion.nav>
